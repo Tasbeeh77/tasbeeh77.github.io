@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tasbeeh Gamal Eissa — Software Engineer</title>
+<meta name="description" content="Tasbeeh Gamal Eissa — Software Engineer specializing in .NET Core, microservices, and enterprise system integration." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23131110'/><text x='50' y='68' font-size='52' font-family='Georgia,serif' fill='%23e3a455' text-anchor='middle'>T</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     EDIT YOUR CONTENT IN THE <script> AT THE BOTTOM OF THIS FILE.
+     This <style> block controls the look. Theme colors below.
+     ============================================================ */
+  :root{
+    --bg:#131110;
+    --bg-2:#1a1714;
+    --panel:#1c1916;
+    --line:#2e2a25;
+    --ink:#f1ebe1;
+    --ink-2:#b7afa3;
+    --muted:#8c857a;
+    --accent:#e3a455;       /* warm amber */
+    --accent-soft:#f0c489;
+    --maxw:1080px;
+    --serif:"Fraunces", Georgia, serif;
+    --sans:"IBM Plex Sans", system-ui, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* grain + glow atmosphere */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(60vw 60vw at 80% -10%, rgba(227,164,85,.10), transparent 60%),
+      radial-gradient(40vw 40vw at -10% 30%, rgba(227,164,85,.05), transparent 60%);
+  }
+  body::after{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{ position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(19,17,16,.7);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:62px; }
+  .brand{ font-family:var(--mono); font-size:14px; letter-spacing:.5px; color:var(--ink); }
+  .brand b{ color:var(--accent); font-weight:600; }
+  .nav-links{ display:flex; gap:26px; font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+  .nav-links a{ transition:color .2s; }
+  .nav-links a:hover{ color:var(--accent); }
+  @media(max-width:680px){ .nav-links{ display:none; } }
+
+  /* ---------- hero ---------- */
+  header{ padding:96px 0 64px; }
+  .eyebrow{ font-family:var(--mono); font-size:13px; color:var(--accent); letter-spacing:1px; margin-bottom:22px; }
+  .eyebrow::before{ content:"// "; opacity:.6; }
+  h1{
+    font-family:var(--serif); font-weight:500; font-size:clamp(46px,8vw,86px);
+    line-height:1.02; letter-spacing:-.5px; color:var(--ink);
+  }
+  h1 .accent{ font-style:italic; color:var(--accent-soft); }
+  .lede{
+    margin-top:28px; max-width:620px; font-size:clamp(16px,2.2vw,19px);
+    color:var(--ink-2); font-weight:300;
+  }
+  .lede b{ color:var(--ink); font-weight:500; }
+  .meta-row{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px 22px; font-family:var(--mono); font-size:13px; color:var(--muted); }
+  .meta-row span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); }
+
+  .cta{ margin-top:36px; display:flex; flex-wrap:wrap; gap:12px; }
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:.3px;
+    padding:12px 20px; border-radius:9px; border:1px solid var(--line);
+    color:var(--ink); transition:all .22s ease; display:inline-flex; align-items:center; gap:9px;
+    background:var(--panel);
+  }
+  .btn:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+  .btn.primary{ background:var(--accent); color:#1a1206; border-color:var(--accent); font-weight:600; }
+  .btn.primary:hover{ background:var(--accent-soft); border-color:var(--accent-soft); color:#1a1206; }
+  .btn svg{ width:15px; height:15px; }
+
+  /* ---------- sections ---------- */
+  section{ padding:60px 0; border-top:1px solid var(--line); }
+  .sec-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:40px; }
+  .sec-num{ font-family:var(--mono); font-size:13px; color:var(--accent); }
+  .sec-title{ font-family:var(--serif); font-weight:500; font-size:clamp(26px,4vw,36px); color:var(--ink); }
+
+  /* about */
+  .about-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:42px; }
+  @media(max-width:760px){ .about-grid{ grid-template-columns:1fr; gap:30px; } }
+  .about-grid p{ color:var(--ink-2); font-size:16.5px; margin-bottom:16px; }
+  .about-grid p b{ color:var(--ink); font-weight:500; }
+  .quick-facts{ border:1px solid var(--line); border-radius:14px; padding:22px; background:var(--panel); align-self:start; }
+  .quick-facts h4{ font-family:var(--mono); font-size:12px; color:var(--muted); font-weight:500; letter-spacing:.5px; margin-bottom:14px; text-transform:uppercase; }
+  .fact{ display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-top:1px solid var(--line); font-size:14px; }
+  .fact:first-of-type{ border-top:none; }
+  .fact .k{ color:var(--muted); font-family:var(--mono); font-size:12.5px; }
+  .fact .v{ color:var(--ink); text-align:right; }
+
+  /* experience */
+  .xp{ position:relative; padding-left:26px; }
+  .xp::before{ content:""; position:absolute; left:4px; top:8px; bottom:8px; width:1px; background:var(--line); }
+  .xp-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px; position:relative; }
+  .xp-head::before{ content:""; position:absolute; left:-26px; top:9px; width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--bg); }
+  .xp-role{ font-family:var(--serif); font-size:22px; color:var(--ink); font-weight:500; }
+  .xp-role span{ color:var(--accent); }
+  .xp-when{ font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+  .xp-intro{ color:var(--ink-2); margin:10px 0 18px; max-width:680px; }
+  .xp ul{ list-style:none; display:grid; gap:9px; }
+  .xp li{ position:relative; padding-left:20px; color:var(--ink-2); font-size:15px; max-width:740px; }
+  .xp li::before{ content:"▹"; position:absolute; left:0; color:var(--accent); }
+  .xp li b{ color:var(--ink); font-weight:500; }
+  .award{ margin-top:18px; display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:13px; color:var(--accent-soft); border:1px solid var(--line); padding:8px 14px; border-radius:8px; background:var(--bg-2); }
+  .award svg{ width:15px; height:15px; flex:none; color:var(--accent); }
+
+  /* projects */
+  .feat{ border:1px solid var(--line); border-radius:16px; padding:30px; background:linear-gradient(160deg,var(--panel),var(--bg-2)); margin-bottom:22px; position:relative; overflow:hidden; }
+  .feat::after{ content:""; position:absolute; right:-60px; top:-60px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(227,164,85,.12),transparent 70%); }
+  .feat .tag-lead{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.5px; }
+  .feat h3{ font-family:var(--serif); font-size:27px; font-weight:500; margin:8px 0 12px; color:var(--ink); }
+  .feat p{ color:var(--ink-2); max-width:760px; font-size:15.5px; }
+  .flow{ font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-top:14px; line-height:1.9; }
+  .flow b{ color:var(--accent-soft); font-weight:500; }
+
+  .proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media(max-width:680px){ .proj-grid{ grid-template-columns:1fr; } }
+  .card{
+    border:1px solid var(--line); border-radius:14px; padding:22px; background:var(--panel);
+    transition:transform .22s ease, border-color .22s ease; display:flex; flex-direction:column; gap:10px;
+  }
+  .card:hover{ transform:translateY(-4px); border-color:var(--accent); }
+  .card-top{ display:flex; align-items:center; justify-content:space-between; }
+  .card h3{ font-family:var(--sans); font-weight:500; font-size:17px; color:var(--ink); }
+  .card .lang{ font-family:var(--mono); font-size:11px; color:var(--accent); border:1px solid var(--line); padding:3px 9px; border-radius:20px; }
+  .card p{ color:var(--ink-2); font-size:14px; flex:1; }
+  .card .links{ display:flex; gap:14px; font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+  .card .links a{ display:inline-flex; align-items:center; gap:6px; transition:color .2s; }
+  .card .links a:hover{ color:var(--accent); }
+  .card .links svg{ width:13px; height:13px; }
+
+  /* skills */
+  .skill-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  @media(max-width:680px){ .skill-grid{ grid-template-columns:1fr; } }
+  .skill-block{ border:1px solid var(--line); border-radius:12px; padding:18px 20px; background:var(--panel); }
+  .skill-block h4{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.5px; margin-bottom:12px; text-transform:uppercase; font-weight:500; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ font-size:13px; color:var(--ink-2); border:1px solid var(--line); padding:5px 11px; border-radius:7px; background:var(--bg-2); transition:.2s; }
+  .skill-block:hover .chip{ border-color:#3a352e; }
+
+  /* contact */
+  .contact{ text-align:center; padding:80px 0; }
+  .contact .eyebrow{ justify-content:center; }
+  .contact h2{ font-family:var(--serif); font-weight:500; font-size:clamp(32px,6vw,56px); color:var(--ink); margin-bottom:18px; line-height:1.1; }
+  .contact h2 .accent{ font-style:italic; color:var(--accent-soft); }
+  .contact p{ color:var(--ink-2); max-width:480px; margin:0 auto 30px; }
+  .contact .cta{ justify-content:center; }
+
+  footer{ border-top:1px solid var(--line); padding:30px 0; }
+  footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-family:var(--mono); font-size:12px; color:var(--muted); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media(prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top">Tasbeeh<b>.</b>Eissa</a>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#experience">experience</a>
+        <a href="#work">work</a>
+        <a href="#skills">skills</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="top"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="eyebrow reveal" id="hero-eyebrow"></div>
+      <h1 class="reveal" id="hero-name"></h1>
+      <p class="lede reveal" id="hero-lede"></p>
+      <div class="meta-row reveal" id="hero-meta"></div>
+      <div class="cta reveal" id="hero-cta"></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">About</span></div>
+      <div class="about-grid">
+        <div class="reveal" id="about-text"></div>
+        <div class="quick-facts reveal" id="quick-facts"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Experience</span></div>
+      <div class="xp reveal" id="xp"></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Selected Work</span></div>
+      <div id="featured"></div>
+      <div class="proj-grid" id="projects"></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Technical Skills</span></div>
+      <div class="skill-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow reveal">Get in touch</div>
+      <h2 class="reveal">Let&rsquo;s build something <span class="accent">reliable</span>.</h2>
+      <p class="reveal" id="contact-line"></p>
+      <div class="cta reveal" id="contact-cta"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span id="foot-left"></span>
+      <span>Built &amp; hosted on GitHub Pages.</span>
+    </div>
+  </footer>
+
+<script>
+/* ================================================================
+   ⬇⬇⬇  EDIT EVERYTHING HERE  ⬇⬇⬇
+   This single config object controls the whole site.
+   Add a project: copy a {...} block inside `projects` and edit it.
+   ================================================================ */
+const DATA = {
+  name: "Tasbeeh Gamal Eissa",
+  // The italic word(s) highlighted in the big heading:
+  nameAccent: "Eissa",
+  eyebrow: "Software Engineer · Alexandria, Egypt",
+  lede: "I design and scale the enterprise systems companies run on. " +
+        "<b>3+ years</b> in <b>.NET Core</b>, microservices, and complex system integration — " +
+        "I owned ~80% of a company-wide CRM now live in production.",
+  meta: [
+    "Open to opportunities",
+    "Backend / .NET Core",
+    "Alexandria, EG",
+  ],
+  links: {
+    email: "tasbeehgamal7@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tasbeeh-eissa-b96703199/",
+    github: "https://github.com/Tasbeeh77",
+    cv: "assets/Tasbeeh_Gamal_Eissa_CV.pdf",
+  },
+
+  about: [
+    "I'm a software engineer focused on the back end — building APIs, microservices, and the integrations that hold large business systems together. Most of my work lives in <b>.NET Core</b>, with an emphasis on clean architecture, maintainability, and shipping features people actually rely on.",
+    "At Wadi Degla Clubs I led the majority of a company-wide CRM that automates the full membership lifecycle and connects to <b>SAP</b>, payment gateways, and shipping carriers. I take real ownership: from design, through delivery, to fast production support when it counts.",
+    "I also build AI and agentic workflows into my daily development — using <b>Claude, Cursor, and Copilot</b> to investigate complex bugs, trace root causes, and move faster without cutting corners.",
+  ],
+  facts: [
+    ["Experience", "3+ years"],
+    ["Focus", ".NET Core · APIs"],
+    ["Recognition", "Best Performer 2024"],
+    ["Education", "ITI · Menofia CS"],
+    ["Languages", "Arabic · English"],
+  ],
+
+  experience: {
+    role: "Software Engineer",
+    company: "Wadi Degla Clubs S.A.E",
+    when: "Jul 2023 — Present · Maadi, Cairo",
+    intro: "Build and maintain the back end of the company's core internal platforms using .NET Core Web API, MVC, and a microservices architecture.",
+    points: [
+      "Architected and delivered <b>~80% of a company-wide CRM</b> that automates the full membership lifecycle, now live in production and praised across departments.",
+      "Led the back-end revamp of the <b>Sports Reservation System</b> using N-Tier architecture and design patterns (Strategy, Factory).",
+      "Integrated <b>Paymob</b> payments, <b>SAP</b>-driven membership renewal, and the <b>Mylerz</b> shipping carrier for membership-card delivery.",
+      "Supported production microservices end-to-end and coordinated with Customer Service, Accounting, Sports, and Operations teams.",
+      "Interviewed and <b>hired two junior engineers</b>; mentored teammates through code reviews and onboarding.",
+    ],
+    award: "Best Performer — Software Engineering Department, 2024",
+  },
+
+  // Big featured project (private/work). Set to null to hide.
+  featured: {
+    tag: "FLAGSHIP · Wadi Degla Clubs",
+    title: "Club Management System (CRM)",
+    desc: "A company-wide CRM I built ~80% of, automating the entire membership journey and replacing slow manual workflows for staff across multiple departments. Includes membership-change flows, reporting dashboards for sales and membership teams, an internal help-desk ticketing system, and SAP integration to keep customer, sales, and financial data in sync.",
+    flow: "lead capture &nbsp;<b>→</b>&nbsp; sales assignment &nbsp;<b>→</b>&nbsp; down-payment opportunity &nbsp;<b>→</b>&nbsp; applicant &amp; interviews &nbsp;<b>→</b>&nbsp; membership generation &amp; activation",
+    stack: [".NET Core", "Microservices", "SAP", "SQL Server", "RabbitMQ"],
+  },
+
+  // Public projects — add/remove freely. repo:"" hides the code link.
+  projects: [
+    { name:"ITI Projects", lang:"C#", repo:"https://github.com/Tasbeeh77/ITI_projects", live:"",
+      desc:"A collection of applications built during the ITI Professional Web Development & BI diploma — C#/.NET fundamentals, OOP, and data structures." },
+    { name:"HealthyLifeStyle App", lang:"Java", repo:"https://github.com/Tasbeeh77/HealthyLifeStyle-App", live:"",
+      desc:"A health & lifestyle application built in Java, exploring mobile/app logic and clean object-oriented design." },
+    { name:"Catch Eggs Game", lang:"JavaScript", repo:"https://github.com/Tasbeeh77/CatchEggsGame", live:"",
+      desc:"A browser arcade game built with vanilla JavaScript and DOM events — timing, scoring, and game-loop logic." },
+    { name:"Memory Game", lang:"JavaScript", repo:"https://github.com/Tasbeeh77/MemoryGame", live:"",
+      desc:"A classic memory card-matching game in vanilla JavaScript, focused on state handling and UI feedback." },
+    { name:"Car Agency", lang:"C++", repo:"https://github.com/Tasbeeh77/car-agency", live:"",
+      desc:"A car-agency management console application in C++ demonstrating OOP modelling and data handling." },
+    { name:"Calculator", lang:"Java", repo:"https://github.com/Tasbeeh77/calculator", live:"",
+      desc:"A calculator application built in Java covering core language fundamentals and event handling." },
+  ],
+
+  skills: [
+    ["Languages", ["C#", "C", "C++", "Java", "JavaScript", "Dart"]],
+    [".NET", [".NET Core", "Web API", "MVC", "Razor"]],
+    ["Architecture", ["OOP", "Design Patterns", "N-Tier", "Clean Architecture", "Microservices"]],
+    ["Front-End", ["Angular", "HTML5", "CSS3", "Bootstrap", "jQuery", "ES6"]],
+    ["Databases", ["SQL Server", "MySQL", "MongoDB", "Firestore", "Redis"]],
+    ["Tools & Infra", ["RabbitMQ", "Hangfire", "AutoMapper", "NUnit", "Azure DevOps", "CI/CD"]],
+    ["AI & Agentic", ["Claude", "Cursor", "GitHub Copilot", "ChatGPT"]],
+  ],
+
+  contactLine: "I'm open to backend and .NET engineering roles. The fastest way to reach me is email — I usually reply within a day.",
+};
+/* ================================================================
+   ⬆⬆⬆  END OF EDITABLE CONTENT  ⬆⬆⬆
+   You normally don't need to touch anything below this line.
+   ================================================================ */
+
+const $ = (id) => document.getElementById(id);
+const ICON = {
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',
+  gh:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>',
+  in:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.8a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.54v-4.57c0-2.45-1.31-3.59-3.06-3.59-1.41 0-2.04.78-2.39 1.32v-1.13h-2.67c.04.75 0 8.35 0 8.35h2.67v-4.66c0-.24.02-.48.09-.65.19-.48.63-.98 1.37-.98.97 0 1.36.74 1.36 1.82v4.47h2.63z"/></svg>',
+  dl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>',
+};
+
+function render(){
+  const d = DATA, L = d.links;
+
+  $("hero-eyebrow").textContent = d.eyebrow;
+  $("hero-name").innerHTML = d.name.replace(d.nameAccent, `<span class="accent">${d.nameAccent}</span>`);
+  $("hero-lede").innerHTML = d.lede;
+  $("hero-meta").innerHTML = d.meta.map(m => `<span><i class="dot"></i>${m}</span>`).join("");
+  $("hero-cta").innerHTML =
+    `<a class="btn primary" href="${L.cv}" download>${ICON.dl}Download CV</a>` +
+    `<a class="btn" href="mailto:${L.email}">${ICON.mail}Email</a>` +
+    `<a class="btn" href="${L.linkedin}" target="_blank" rel="noopener">${ICON.in}LinkedIn</a>` +
+    `<a class="btn" href="${L.github}" target="_blank" rel="noopener">${ICON.gh}GitHub</a>`;
+
+  $("about-text").innerHTML = d.about.map(p => `<p>${p}</p>`).join("");
+  $("quick-facts").innerHTML = `<h4>Quick facts</h4>` +
+    d.facts.map(([k,v]) => `<div class="fact"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
+
+  const x = d.experience;
+  $("xp").innerHTML =
+    `<div class="xp-head"><div class="xp-role">${x.role} <span>@ ${x.company}</span></div><div class="xp-when">${x.when}</div></div>` +
+    `<p class="xp-intro">${x.intro}</p>` +
+    `<ul>${x.points.map(p => `<li>${p}</li>`).join("")}</ul>` +
+    (x.award ? `<div class="award">${ICON.star}${x.award}</div>` : "");
+
+  if(d.featured){
+    const f = d.featured;
+    $("featured").innerHTML =
+      `<div class="feat reveal"><div class="tag-lead">${f.tag}</div>` +
+      `<h3>${f.title}</h3><p>${f.desc}</p>` +
+      (f.flow ? `<div class="flow">${f.flow}</div>` : "") +
+      `<div class="card-top" style="margin-top:18px"><div class="chips">${f.stack.map(s=>`<span class="chip">${s}</span>`).join("")}</div></div></div>`;
+  }
+
+  $("projects").innerHTML = d.projects.map(p => {
+    const links = [];
+    if(p.repo) links.push(`<a href="${p.repo}" target="_blank" rel="noopener">${ICON.gh}Code</a>`);
+    if(p.live) links.push(`<a href="${p.live}" target="_blank" rel="noopener">${ICON.link}Live</a>`);
+    return `<div class="card reveal"><div class="card-top"><h3>${p.name}</h3><span class="lang">${p.lang}</span></div>` +
+      `<p>${p.desc}</p>` + (links.length?`<div class="links">${links.join("")}</div>`:"") + `</div>`;
+  }).join("");
+
+  $("skills-grid").innerHTML = d.skills.map(([h, items]) =>
+    `<div class="skill-block reveal"><h4>${h}</h4><div class="chips">${items.map(i=>`<span class="chip">${i}</span>`).join("")}</div></div>`
+  ).join("");
+
+  $("contact-line").innerHTML = d.contactLine;
+  $("contact-cta").innerHTML =
+    `<a class="btn primary" href="mailto:${L.email}">${ICON.mail}${L.email}</a>` +
+    `<a class="btn" href="${L.linkedin}" target="_blank" rel="noopener">${ICON.in}LinkedIn</a>` +
+    `<a class="btn" href="${L.github}" target="_blank" rel="noopener">${ICON.gh}GitHub</a>`;
+
+  $("foot-left").textContent = `© ${new Date().getFullYear()} ${d.name}`;
+
+  // staggered reveal
+  const els = [...document.querySelectorAll(".reveal")];
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }});
+  }, { threshold:.12 });
+  els.forEach(el=>io.observe(el));
+  // hero elements stagger immediately
+  document.querySelectorAll("header .reveal").forEach((el,i)=>{
+    setTimeout(()=>el.classList.add("in"), 90*i);
+  });
+}
+render();
+</script>
+</body>
+</html>
